@@ -3,6 +3,11 @@
 # dependencies
 /test-meli/node_modules
 /test-meli-api/node_modules
+
+#environment variables
+/test-meli-api/.env
+/test-meli-api/.env
+
 /.pnp
 .pnp.js
 
