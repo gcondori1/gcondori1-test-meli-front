@@ -1,0 +1,14 @@
+{
+  "name": "test-meli-api",
+  "version": "1.0.0",
+  "description": "test mercado libre",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "German Condori",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
