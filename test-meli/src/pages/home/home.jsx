@@ -1,5 +1,5 @@
 import React from 'react';
-import Landing from '../../components/atoms/landing/landing';
+import Landing from '../../components/landing/landing';
 import Layout from '../../components/layout';
 import './home.sass';
 

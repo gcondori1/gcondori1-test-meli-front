@@ -1,5 +1,5 @@
 import React from 'react';
-import mlNewLogo from '../../../assets/065-mercadol.png'
+import mlNewLogo from '../../assets/065-mercadol.png'
 import './landing.sass';
 
 export default function Landing() {
