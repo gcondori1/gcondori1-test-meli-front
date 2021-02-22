@@ -18,6 +18,7 @@ export default function Searcher() {
     setKeyword(event.target.value);
   }
   const findProducts = () => {
+    if (!keyword) return;
     history.push("/items?search="+keyword);
   }
   const handleLogo = () => {

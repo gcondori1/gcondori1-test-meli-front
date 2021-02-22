@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import './layout.sass';
 import Searcher from './atoms/searcher/searcher';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="LayoutContainer">
       <head>
         <title>Mercado Libre</title>
         <link rel="icon" href="/favicon.ico" />
@@ -12,14 +13,9 @@ export default function Layout({ children }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
       <body>
-      <div>
         <Searcher />
-      </div>
-      <div>{children}</div>
+        {children}
       </body>
-      <footer>
-        
-      </footer>
     </div>
   );
 }

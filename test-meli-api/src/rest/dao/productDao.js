@@ -7,7 +7,11 @@ module.exports = {
   async findById(id) {
     try {
       const { data } = await axios.get(`${url}/items/${id}`);
-      return formatProduct(data);
+      const { data: description } = await axios.get(`${url}/items/${id}/description`);
+      return formatProduct({
+        plain_text: description.plain_text,
+        ...data
+      });
     } catch (error) {
       console.error(error);
       throw error;
