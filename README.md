@@ -9,13 +9,13 @@
 2. Set environment variables into test-meli-api (.env local):
 
 
-    ML_API_URL=https://api.mercadolibre.com
-    TEST_MELI_API_URL=http://localhost
-    TEST_MELI_API_PORT=8080
-    FRONTEND_URL=http://localhost
-    FRONTEND_PORT=3000
-    AUTHOR_NAME=German
-    AUTHOR_LASTNAME=Condori
+       ML_API_URL=https://api.mercadolibre.com
+       TEST_MELI_API_URL=http://localhost
+       TEST_MELI_API_PORT=8080
+       FRONTEND_URL=http://localhost
+       FRONTEND_PORT=3000
+       AUTHOR_NAME=German
+       AUTHOR_LASTNAME=Condori
        
 
 ### 3. Run projects
