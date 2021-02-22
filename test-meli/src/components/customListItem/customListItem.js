@@ -13,7 +13,6 @@ export default function CustomListItem({ item }) {
     state,
     free_shipping
   } = item;
-  debugger;
   const getCurrency = (price) => {
     const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
