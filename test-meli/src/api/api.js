@@ -1,14 +1,12 @@
 import axios from 'axios';
 
-export const getBaseURL = () => 'https://localhost:8080';
+export const getBaseURL = () => 'http://localhost:8080';
 
 const baseURL = getBaseURL();
 
 const api = axios.create({
   baseURL,
   timeout: 60000,
-  headers: { 'content-type': 'application/json' },
-  credentials: 'same-origin',
   withCredentials: true
 });
 
@@ -24,9 +22,8 @@ export const makeApiRequest = async (method, url, body, config) => {
       data: body,
       ...config
     });
-
-    data = result.data;
     headers = result.headers;
+    data = result.data;
   } catch (error) {
     console.error(error);
   }
