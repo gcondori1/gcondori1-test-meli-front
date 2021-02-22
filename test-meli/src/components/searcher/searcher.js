@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { useHistory } from 'react-router-dom';
 import './searcher.sass';
 import logo from '../../assets/Logo_ML@2x.png.png';
 import search from '../../assets/ic_Search.png';
-import { useHistory } from "react-router-dom";
 
 export default function Searcher() {
   const [keyword, setKeyword] = useState('');
   const history = useHistory();
+  const findProducts = () => {
+    if (!keyword) return;
+    history.push(`/items?search=${keyword}`);
+  };
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       findProducts();
     }
-  }
+  };
 
   const handleChange = (event) => {
     setKeyword(event.target.value);
-  }
-  const findProducts = () => {
-    if (!keyword) return;
-    history.push("/items?search="+keyword);
-  }
+  };
+
   const handleLogo = () => {
     history.push('/');
-  }
+  };
+
   return (
     <div className="SGeneral-container">
       <div className="Searcher-container">
@@ -44,7 +47,7 @@ export default function Searcher() {
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
               />
-              <button className="Search-Button" type="submit" value="Submit" onClick={findProducts} >
+              <button className="Search-Button" type="submit" value="Submit" onClick={findProducts}>
                 <img src={search} alt="buscar" />
               </button>
             </Col>
@@ -52,5 +55,5 @@ export default function Searcher() {
         </Grid>
       </div>
     </div>
-  )
+  );
 }

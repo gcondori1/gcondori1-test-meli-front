@@ -2,8 +2,6 @@ import { doGet } from './api';
 
 const baseURL = '/items';
 
-export const getProductById = productId =>
-  doGet(`${baseURL}/${productId}`);
+export const getProductById = (productId) => doGet(`${baseURL}/${productId}`);
 
-export const getProductListByQuery = query =>
-  doGet(`${baseURL}?q=${query}`);
+export const getProductListByQuery = (query) => doGet(`${baseURL}?q=${query}`);

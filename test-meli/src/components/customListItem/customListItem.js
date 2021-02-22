@@ -1,10 +1,11 @@
 import React from 'react';
 import './customListItem.sass';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import imgShipping from '../../assets/ic_shipping@2x.png.png';
 
-export default function CustomListItem({ item, categories }) {
+/* eslint-disable camelcase */
+export default function CustomListItem({ item }) {
   const {
     id,
     title,
@@ -13,27 +14,27 @@ export default function CustomListItem({ item, categories }) {
     state,
     free_shipping
   } = item;
-  const getCurrency = (price) => {
+  const getCurrency = (priceAmount) => {
     const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0
-    })
-    return formatter.format(price.amount);
-  }
+    });
+    return formatter.format(priceAmount.amount);
+  };
   return (
     <div className="ItemContainer">
       <Grid fluid>
         <Row>
-          <Col xs={8} sm={4} md={4} lg={2} >
+          <Col xs={8} sm={4} md={4} lg={2}>
             <div className="ImageContainer">
-              <Link to={"/item/" + id}>
+              <Link to={`/item/${id}`}>
                 <img src={picture} alt="imagen" />
               </Link>
             </div>
           </Col>
 
-          <Col xs={2} sm={4} md={4} lg={4} >
+          <Col xs={2} sm={4} md={4} lg={4}>
             <div className="DataContainer">
               <Row>
                 <div className="PriceContainer">
@@ -44,20 +45,19 @@ export default function CustomListItem({ item, categories }) {
                 </div>
               </Row>
               <Row>
-                <Link to={"/item/"+id}>
-                  
+                <Link to={`/item/${id}`}>
                   <div className="TitleContainer">
                     {title}
-                  </div >
+                  </div>
                 </Link>
               </Row>
             </div>
           </Col>
 
-          <Col xs={3} sm={3} md={2} lg={4} >
+          <Col xs={3} sm={3} md={2} lg={4}>
             <div className="State">
-            {state}
-          </div>
+              {state}
+            </div>
           </Col>
         </Row>
       </Grid>
