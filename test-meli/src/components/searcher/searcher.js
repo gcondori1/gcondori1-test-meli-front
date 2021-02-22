@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import './searcher.sass';
-import logo from '../../../assets/Logo_ML@2x.png.png';
-import search from '../../../assets/ic_Search.png';
+import logo from '../../assets/Logo_ML@2x.png.png';
+import search from '../../assets/ic_Search.png';
 import { useHistory } from "react-router-dom";
 
 export default function Searcher() {

@@ -2,9 +2,9 @@ import React from 'react';
 import './customListItem.sass';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link } from "react-router-dom";
-import imgShipping from '../../../assets/ic_shipping@2x.png.png';
+import imgShipping from '../../assets/ic_shipping@2x.png.png';
 
-export default function CustomListItem({ item }) {
+export default function CustomListItem({ item, categories }) {
   const {
     id,
     title,
@@ -22,11 +22,11 @@ export default function CustomListItem({ item }) {
     return formatter.format(price.amount);
   }
   return (
-    <div className="Item-container">
+    <div className="ItemContainer">
       <Grid fluid>
         <Row>
           <Col xs={8} sm={4} md={4} lg={2} >
-            <div className="Image-container">
+            <div className="ImageContainer">
               <Link to={"/item/" + id}>
                 <img src={picture} alt="imagen" />
               </Link>
@@ -34,19 +34,19 @@ export default function CustomListItem({ item }) {
           </Col>
 
           <Col xs={2} sm={4} md={4} lg={4} >
-            <div className="Data-container">
+            <div className="DataContainer">
               <Row>
-                <div className="Price-container">
+                <div className="PriceContainer">
                   {getCurrency(price)}
                 </div>
-                <div className="Shipping-container">
+                <div className="ShippingContainer">
                   {(free_shipping) ? <img src={imgShipping} alt="envio_gratis" /> : null}
                 </div>
               </Row>
               <Row>
                 <Link to={"/item/"+id}>
                   
-                  <div className="Title-container">
+                  <div className="TitleContainer">
                     {title}
                   </div >
                 </Link>

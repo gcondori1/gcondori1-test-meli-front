@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './layout.sass';
-import Searcher from './atoms/searcher/searcher';
+import Searcher from './searcher/searcher';
 
 export default function Layout({ children }) {
   return (

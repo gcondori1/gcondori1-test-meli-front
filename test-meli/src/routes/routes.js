@@ -1,6 +1,6 @@
 import Home from '../pages/home/home';
 import ProductList from '../pages/productList/productsList';
-import ProductDetail from '../pages/producDetail/productDetail'; 
+import ProductDetail from '../pages/productDetail/productDetail'; 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 export default function Routes() {

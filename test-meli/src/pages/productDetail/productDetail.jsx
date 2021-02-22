@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemDetail from '../../components/atoms/itemDetail/itemDetail';
+import ItemDetail from '../../components/itemDetail/itemDetail';
 import { getProductById } from "../../api/productApi";
 import Layout from '../../components/layout';
-import Spinner from '../../components/atoms/spinner/spinner';
-import Message from '../../components/atoms/message/message';
+import Spinner from '../../components/spinner/spinner';
+import Message from '../../components/message/message';
+import Categories from '../../components/categories/categories';
 
 
 export default function ProductDetail() {
   const [product, setProduct] = useState(null);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   
